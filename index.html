@@ -4,18 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sunday Market</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background: #e5e7eb; /* heather grey */
+      background: #e5e7eb;
       color: #0a1a2f;
+      font-family: 'Inter', sans-serif;
     }
 
     /* NAVBAR */
@@ -24,34 +20,47 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 60px;
-      background: #0a1a2f; /* matte navy */
+      background: #0a1a2f;
       color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      position: relative;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: 600;
+    /* thin gold accent */
+    .navbar::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #c6a86b, transparent);
     }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 35px;
-    }
+    .logo { font-size: 22px; font-weight: 500; letter-spacing: 0.5px; }
+
+    .nav-links { list-style: none; display: flex; gap: 35px; }
 
     .nav-links li a {
       text-decoration: none;
       color: #cbd5e1;
-      font-size: 15px;
-      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      position: relative;
     }
 
-    .nav-links li a:hover {
-      color: white;
+    .nav-links li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -4px;
+      left: 0;
+      background: #c6a86b;
+      transition: 0.3s;
     }
+
+    .nav-links li a:hover::after { width: 100%; }
 
     /* HERO */
     .hero {
@@ -59,88 +68,126 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 80px 60px;
-      gap: 60px;
+      padding: 100px 80px;
+      gap: 80px;
+      background: linear-gradient(to bottom, #e5e7eb 60%, #dde1e7);
+      position: relative;
+    }
+
+    /* subtle luxury pattern */
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at 1px 1px, rgba(10,26,47,0.06) 1px, transparent 0);
+      background-size: 32px 32px;
+      opacity: 0.4;
+      pointer-events: none;
     }
 
     .hero-text h1 {
-      font-size: 56px;
-      font-weight: 700;
-      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      line-height: 1.1;
+      position: relative;
+    }
+
+    /* gold underline accent */
+    .hero-text h1::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: #c6a86b;
+      margin-top: 12px;
     }
 
     .hero-text p {
       font-size: 18px;
       color: #475569;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
+      max-width: 520px;
     }
 
+    /* CTA - luxury style */
     .cta-button {
-      padding: 12px 22px;
-      background: #0a1a2f;
-      border: none;
-      border-radius: 6px;
-      color: white;
+      padding: 12px 26px;
+      background: transparent;
+      border: 1px solid #c6a86b;
+      border-radius: 4px;
+      color: #0a1a2f;
       font-weight: 500;
       cursor: pointer;
+      transition: 0.3s;
     }
 
     .cta-button:hover {
-      background: #13294b;
+      background: #c6a86b;
+      color: white;
     }
 
     /* SIGN IN */
     .signin-box {
-      background: #f9fafb;
+      background: #ffffff;
       border: 1px solid #d1d5db;
-      padding: 30px;
-      border-radius: 10px;
-      width: 340px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      padding: 35px;
+      border-radius: 6px;
+      width: 360px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      position: relative;
     }
 
-    .signin-box h2 {
-      margin-bottom: 20px;
-      font-weight: 600;
+    /* subtle gold top line */
+    .signin-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #c6a86b;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
     }
+
+    .signin-box h2 { margin-bottom: 20px; font-weight: 500; }
 
     .signin-box input {
       width: 100%;
       padding: 12px;
-      margin-bottom: 12px;
-      border-radius: 6px;
+      margin-bottom: 14px;
+      border-radius: 4px;
       border: 1px solid #cbd5e1;
-      background: #ffffff;
+      background: #f9fafb;
     }
 
     .signin-box button {
       width: 100%;
       padding: 12px;
-      border-radius: 6px;
+      border-radius: 4px;
       border: none;
       background: #0a1a2f;
       color: white;
       font-weight: 500;
       cursor: pointer;
+      transition: 0.3s;
     }
 
-    .signin-box button:hover {
-      background: #13294b;
-    }
+    .signin-box button:hover { background: #13294b; }
 
     footer {
       text-align: center;
       padding: 30px;
       border-top: 1px solid #d1d5db;
       color: #6b7280;
-      background: #e5e7eb;
+      font-size: 14px;
     }
 
     @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
+      .hero { flex-direction: column; text-align: center; }
     }
 
   </style>
