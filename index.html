@@ -232,6 +232,16 @@
         document.getElementById('form-title').innerText = 'Sign In (Vendor)';
       }
     }
+  
+    function handleLogin() {
+      const isVendor = document.querySelectorAll('.role-toggle button')[1].classList.contains('active');
+
+      if (isVendor) {
+        window.location.href = 'vendor-permit.html';
+      } else {
+        window.location.href = 'browser-home.html';
+      }
+    }
   </script>
 </head>
 <body>
@@ -262,7 +272,7 @@
       <h2 id="form-title">Sign In (Browser)</h2>
       <input type="email" placeholder="Email address">
       <input type="password" placeholder="Password">
-      <button>Sign In</button>
+      <button onclick="handleLogin()">Sign In</button>
     </div>
   </section>
 
