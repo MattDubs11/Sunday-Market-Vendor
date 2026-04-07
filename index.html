@@ -190,7 +190,49 @@
       .hero { flex-direction: column; text-align: center; }
     }
 
+  
+    .role-toggle {
+      display: flex;
+      margin-bottom: 20px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .role-toggle button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: #f1f5f9;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .role-toggle button.active {
+      background: #0a1a2f;
+      color: white;
+    }
+
+    .role-toggle button:not(.active):hover {
+      background: #e2e8f0;
+    }
+
   </style>
+
+  <script>
+    function switchRole(role) {
+      const buttons = document.querySelectorAll('.role-toggle button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      if (role === 'browser') {
+        buttons[0].classList.add('active');
+        document.getElementById('form-title').innerText = 'Sign In (Browser)';
+      } else {
+        buttons[1].classList.add('active');
+        document.getElementById('form-title').innerText = 'Sign In (Vendor)';
+      }
+    }
+  </script>
 </head>
 <body>
 
@@ -212,7 +254,12 @@
     </div>
 
     <div class="signin-box">
-      <h2>Sign In</h2>
+      <div class="role-toggle">
+        <button class="active" onclick="switchRole('browser')">Browser</button>
+        <button onclick="switchRole('vendor')">Vendor</button>
+      </div>
+
+      <h2 id="form-title">Sign In (Browser)</h2>
       <input type="email" placeholder="Email address">
       <input type="password" placeholder="Password">
       <button>Sign In</button>
