@@ -14,8 +14,8 @@
     }
 
     body {
-      background: #f4f6f8;
-      color: #0f172a;
+      background: #e5e7eb; /* heather grey */
+      color: #0a1a2f;
     }
 
     /* NAVBAR */
@@ -24,7 +24,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 60px;
-      background: #0b1f3a;
+      background: #0a1a2f; /* matte navy */
       color: white;
       position: sticky;
       top: 0;
@@ -34,7 +34,6 @@
     .logo {
       font-size: 22px;
       font-weight: 600;
-      letter-spacing: 0.5px;
     }
 
     .nav-links {
@@ -48,7 +47,6 @@
       color: #cbd5e1;
       font-size: 15px;
       font-weight: 500;
-      transition: 0.3s;
     }
 
     .nav-links li a:hover {
@@ -65,15 +63,10 @@
       gap: 60px;
     }
 
-    .hero-text {
-      max-width: 550px;
-    }
-
     .hero-text h1 {
       font-size: 56px;
       font-weight: 700;
       margin-bottom: 20px;
-      line-height: 1.1;
     }
 
     .hero-text p {
@@ -84,27 +77,26 @@
 
     .cta-button {
       padding: 12px 22px;
-      background: #0b1f3a;
+      background: #0a1a2f;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       color: white;
       font-weight: 500;
       cursor: pointer;
-      transition: 0.3s;
     }
 
     .cta-button:hover {
-      background: #132a4a;
+      background: #13294b;
     }
 
-    /* SIGN IN CARD */
+    /* SIGN IN */
     .signin-box {
-      background: white;
-      border: 1px solid #e2e8f0;
+      background: #f9fafb;
+      border: 1px solid #d1d5db;
       padding: 30px;
-      border-radius: 16px;
+      border-radius: 10px;
       width: 340px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
     .signin-box h2 {
@@ -116,51 +108,38 @@
       width: 100%;
       padding: 12px;
       margin-bottom: 12px;
-      border-radius: 8px;
+      border-radius: 6px;
       border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      color: #0f172a;
-    }
-
-    .signin-box input::placeholder {
-      color: #94a3b8;
+      background: #ffffff;
     }
 
     .signin-box button {
       width: 100%;
       padding: 12px;
-      border-radius: 8px;
+      border-radius: 6px;
       border: none;
-      background: #0b1f3a;
+      background: #0a1a2f;
       color: white;
       font-weight: 500;
       cursor: pointer;
-      transition: 0.3s;
     }
 
     .signin-box button:hover {
-      background: #132a4a;
+      background: #13294b;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 30px;
-      border-top: 1px solid #e2e8f0;
-      color: #64748b;
-      font-size: 14px;
-      background: #f4f6f8;
+      border-top: 1px solid #d1d5db;
+      color: #6b7280;
+      background: #e5e7eb;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero {
         flex-direction: column;
         text-align: center;
-      }
-
-      .hero-text h1 {
-        font-size: 42px;
       }
     }
 
@@ -168,7 +147,6 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">Sunday Market</div>
     <ul class="nav-links">
@@ -179,7 +157,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
       <h1>Modern Marketplace for Local Vendors</h1>
@@ -195,7 +172,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     © 2026 Sunday Market. All rights reserved.
   </footer>
