@@ -1,80 +1,310 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vendor Permit</title>
+  <title>Vendor Permit | Sunday Market</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       background: #e5e7eb;
-      text-align: center;
-      padding: 60px;
+      color: #0a1a2f;
     }
 
-    .box {
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #0a1a2f;
+      color: white;
+      position: relative;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #c6a86b, transparent);
+    }
+
+    /* MAIN SECTION */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+    }
+
+    .form-box {
       background: white;
-      max-width: 500px;
-      margin: auto;
-      padding: 30px;
+      width: 100%;
+      max-width: 760px;
+      padding: 50px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+      border: 1px solid #d1d5db;
+      position: relative;
     }
 
-    input, select {
+    .form-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+      height: 4px;
+      background: #c6a86b;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
     }
 
-    button {
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 46px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #0a1a2f;
+    }
+
+    .subtitle {
+      color: #475569;
+      margin-bottom: 35px;
+      font-size: 17px;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    .gold-divider {
+      width: 70px;
+      height: 2px;
+      background: #c6a86b;
+      margin-bottom: 28px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    input,
+    select {
       width: 100%;
-      padding: 12px;
-      background: navy;
+      padding: 14px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 14px;
+    }
+
+    input[type="file"] {
+      background: white;
+    }
+
+    .camera-box {
+      margin-top: 25px;
+      padding: 24px;
+      border: 1px dashed #c6a86b;
+      border-radius: 8px;
+      background: #faf8f4;
+    }
+
+    .camera-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #0a1a2f;
+    }
+
+    .camera-box p {
+      color: #475569;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .camera-button {
+      background: transparent;
+      color: #0a1a2f;
+      border: 1px solid #c6a86b;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .camera-button:hover {
+      background: #c6a86b;
+      color: white;
+    }
+
+    video {
+      width: 100%;
+      margin-top: 18px;
+      border-radius: 8px;
+      display: none;
+      border: 1px solid #d1d5db;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 35px;
+      padding: 16px;
+      background: #0a1a2f;
       color: white;
       border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #13294b;
+    }
+
+    @media (max-width: 700px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .full-width {
+        grid-column: span 1;
+      }
+
+      .form-box {
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
     }
   </style>
-
 </head>
-
 <body>
 
-  <div class="box">
-    <h1>Vendor Application</h1>
+  <div class="navbar">Sunday Market</div>
 
-```
-<form>
-  <input type="text" placeholder="Full Name">
-  <input type="text" placeholder="Business Name">
-  <input type="text" placeholder="What do you sell?">
+  <div class="container">
+    <div class="form-box">
+      <h1>Vendor Application</h1>
+      <div class="gold-divider"></div>
+      <p class="subtitle">
+        Submit your business details, upload permits, or scan documents directly with your device camera for faster onboarding.
+      </p>
 
-  <select>
-    <option>Food</option>
-    <option>Drinks</option>
-    <option>Clothing</option>
-    <option>Crafts</option>
-  </select>
+      <form>
+        <div class="form-grid">
+          <div>
+            <label>Full Name</label>
+            <input type="text" placeholder="John Smith">
+          </div>
 
-  <input type="text" placeholder="Phone Number">
-  <input type="email" placeholder="Email">
+          <div>
+            <label>Business Name</label>
+            <input type="text" placeholder="Smith Bakery">
+          </div>
 
-  <select>
-    <option>Do you have a permit?</option>
-    <option>Yes</option>
-    <option>No</option>
-  </select>
+          <div class="full-width">
+            <label>What do you sell?</label>
+            <input type="text" placeholder="Baked goods, drinks, crafts...">
+          </div>
 
-  <input type="file">
+          <div>
+            <label>Category</label>
+            <select>
+              <option>Food</option>
+              <option>Drinks</option>
+              <option>Clothing</option>
+              <option>Crafts</option>
+            </select>
+          </div>
 
-  <button type="submit">Submit</button>
-</form>
-```
+          <div>
+            <label>Phone Number</label>
+            <input type="text" placeholder="(123) 456-7890">
+          </div>
 
+          <div>
+            <label>Email</label>
+            <input type="email" placeholder="you@email.com">
+          </div>
+
+          <div>
+            <label>Do you have a permit?</label>
+            <select>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div class="full-width">
+            <label>Upload Permit File</label>
+            <input type="file">
+          </div>
+        </div>
+
+        <div class="camera-box">
+          <h3>Scan Permit with Camera</h3>
+          <p>
+            If your permit is physical, you can quickly access your device camera and scan it directly here.
+          </p>
+          <button type="button" class="camera-button" onclick="startCamera()">
+            Access Camera Scanner
+          </button>
+          <video id="cameraPreview" autoplay></video>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Vendor Application</button>
+      </form>
+    </div>
   </div>
+
+  <script>
+    async function startCamera() {
+      const video = document.getElementById('cameraPreview');
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: 'environment' }
+        });
+
+        video.srcObject = stream;
+        video.style.display = 'block';
+      } catch (error) {
+        alert('Camera access denied or unavailable.');
+      }
+    }
+  </script>
 
 </body>
 </html>
