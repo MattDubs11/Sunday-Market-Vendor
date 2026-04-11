@@ -203,24 +203,6 @@
     .submit-btn:hover {
       background: #13294b;
     }
-
-    @media (max-width: 700px) {
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .full-width {
-        grid-column: span 1;
-      }
-
-      .form-box {
-        padding: 30px;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-    }
   </style>
 
 </head>
@@ -311,7 +293,7 @@
   <script>
     function handleSubmit(event) {
       event.preventDefault();
-      alert("Application submitted");
+      window.location.href = "vendor-dashboard.html";
     }
 
     async function startCamera() {
@@ -332,4 +314,3 @@
 
 </body>
 </html>
-
