@@ -41,12 +41,12 @@
   <script>
     const map = L.map('map').setView([40.7831, -73.9712], 12);
 
-    // ✅ SATELLITE MAP (only change)
+    // Satellite map
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles © Esri'
     }).addTo(map);
 
-    // fix rendering issue
+    // Fix rendering
     setTimeout(() => {
       map.invalidateSize();
     }, 100);
@@ -56,7 +56,11 @@
         name: "Union Square Greenmarket",
         coords: [40.7359, -73.9911],
         details: `
-          <div class="popup-title">Union Square Greenmarket</div>
+          <div class="popup-title">
+            <a href="market-detail.html" style="color:#0a1a2f; text-decoration:none;">
+              Union Square Greenmarket
+            </a>
+          </div>
           <div class="popup-text"><strong>Type:</strong> Farmers Market</div>
           <div class="popup-text"><strong>Area:</strong> Union Square</div>
           <div class="popup-text"><strong>Details:</strong> Large outdoor market with local produce, baked goods, and specialty food vendors.</div>
@@ -66,7 +70,11 @@
         name: "Chelsea Market",
         coords: [40.7423, -74.0060],
         details: `
-          <div class="popup-title">Chelsea Market</div>
+          <div class="popup-title">
+            <a href="market-detail.html" style="color:#0a1a2f; text-decoration:none;">
+              Chelsea Market
+            </a>
+          </div>
           <div class="popup-text"><strong>Type:</strong> Indoor Market</div>
           <div class="popup-text"><strong>Area:</strong> Chelsea</div>
           <div class="popup-text"><strong>Details:</strong> Indoor food hall with restaurants, specialty groceries, and retail vendors.</div>
@@ -76,7 +84,11 @@
         name: "Essex Market",
         coords: [40.7180, -73.9883],
         details: `
-          <div class="popup-title">Essex Market</div>
+          <div class="popup-title">
+            <a href="market-detail.html" style="color:#0a1a2f; text-decoration:none;">
+              Essex Market
+            </a>
+          </div>
           <div class="popup-text"><strong>Type:</strong> Public Market</div>
           <div class="popup-text"><strong>Area:</strong> Lower East Side</div>
           <div class="popup-text"><strong>Details:</strong> Historic market with prepared foods, local merchants, and grocery-style vendors.</div>
