@@ -220,7 +220,6 @@
         Submit your business details, upload permits, or scan documents directly with your device camera for faster onboarding.
       </p>
 
-```
   <form onsubmit="handleSubmit(event)">
     <div class="form-grid">
       <div>
@@ -228,65 +227,67 @@
         <input type="text" placeholder="John Smith">
       </div>
 
-      <div>
-        <label>Business Name</label>
-        <input type="text" placeholder="Smith Bakery">
-      </div>
+```
+  <div>
+    <label>Business Name</label>
+    <input type="text" placeholder="Smith Bakery">
+  </div>
 
-      <div class="full-width">
-        <label>What do you sell?</label>
-        <input type="text" placeholder="Baked goods, drinks, crafts...">
-      </div>
+  <div class="full-width">
+    <label>What do you sell?</label>
+    <input type="text" placeholder="Baked goods, drinks, crafts...">
+  </div>
 
-      <div>
-        <label>Category</label>
-        <select>
-          <option>Food</option>
-          <option>Drinks</option>
-          <option>Clothing</option>
-          <option>Crafts</option>
-        </select>
-      </div>
+  <div>
+    <label>Category</label>
+    <select>
+      <option>Food</option>
+      <option>Drinks</option>
+      <option>Clothing</option>
+      <option>Crafts</option>
+    </select>
+  </div>
 
-      <div>
-        <label>Phone Number</label>
-        <input type="text" placeholder="(123) 456-7890">
-      </div>
+  <div>
+    <label>Phone Number</label>
+    <input type="text" placeholder="(123) 456-7890">
+  </div>
 
-      <div>
-        <label>Email</label>
-        <input type="email" placeholder="you@email.com">
-      </div>
+  <div>
+    <label>Email</label>
+    <input type="email" placeholder="you@email.com">
+  </div>
 
-      <div>
-        <label>Do you have a permit?</label>
-        <select>
-          <option>Yes</option>
-          <option>No</option>
-        </select>
-      </div>
+  <div>
+    <label>Do you have a permit?</label>
+    <select>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
 
-      <div class="full-width">
-        <label>Upload Permit File</label>
-        <input type="file">
-      </div>
-    </div>
+  <div class="full-width">
+    <label>Upload Permit File</label>
+    <input type="file">
+  </div>
+</div>
 
-    <div class="camera-box">
-      <h3>Scan Permit with Camera</h3>
-      <p>
-        If your permit is physical, you can quickly access your device camera and scan it directly here.
-      </p>
-      <button type="button" class="camera-button" onclick="startCamera()">
-        Access Camera Scanner
-      </button>
-      <video id="cameraPreview" autoplay></video>
-    </div>
+<div class="camera-box">
+  <h3>Scan Permit with Camera</h3>
+  <p>
+    If your permit is physical, you can quickly access your device camera and scan it directly here.
+  </p>
+  <button type="button" class="camera-button" onclick="startCamera()">
+    Access Camera Scanner
+  </button>
+  <video id="cameraPreview" autoplay></video>
+</div>
 
-    <button type="submit" class="submit-btn">Submit Vendor Application</button>
+<button type="submit" class="submit-btn">Submit Vendor Application</button>
+```
+
   </form>
 </div>
-```
 
   </div>
 
