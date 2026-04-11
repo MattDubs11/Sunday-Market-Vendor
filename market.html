@@ -45,7 +45,8 @@
   <script>
     const map = L.map('map').setView([40.7831, -73.9712], 12);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    // ✅ ONLY FIXED LINE (tile URL)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
