@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manhattan Market Map</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    crossorigin=""
+  />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+
+    .popup-title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .popup-text {
+      margin: 4px 0;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    crossorigin=""
+  ></script>
+
+  <script>
+    const map = L.map('map').setView([40.7831, -73.9712], 12);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const markets = [
+      {
+        name: "Union Square Greenmarket",
+        coords: [40.7359, -73.9911],
+        details: `
+          <div class="popup-title">Union Square Greenmarket</div>
+          <div class="popup-text"><strong>Type:</strong> Farmers Market</div>
+          <div class="popup-text"><strong>Area:</strong> Union Square</div>
+          <div class="popup-text"><strong>Details:</strong> Large outdoor market with local produce, baked goods, and specialty food vendors.</div>
+        `
+      },
+      {
+        name: "Chelsea Market",
+        coords: [40.7423, -74.0060],
+        details: `
+          <div class="popup-title">Chelsea Market</div>
+          <div class="popup-text"><strong>Type:</strong> Indoor Market</div>
+          <div class="popup-text"><strong>Area:</strong> Chelsea</div>
+          <div class="popup-text"><strong>Details:</strong> Indoor food hall with restaurants, specialty groceries, and retail vendors.</div>
+        `
+      },
+      {
+        name: "Essex Market",
+        coords: [40.7180, -73.9883],
+        details: `
+          <div class="popup-title">Essex Market</div>
+          <div class="popup-text"><strong>Type:</strong> Public Market</div>
+          <div class="popup-text"><strong>Area:</strong> Lower East Side</div>
+          <div class="popup-text"><strong>Details:</strong> Historic market with prepared foods, local merchants, and grocery-style vendors.</div>
+        `
+      }
+    ];
+
+    markets.forEach((market) => {
+      L.marker(market.coords)
+        .addTo(map)
+        .bindPopup(market.details);
+    });
+  </script>
+</body>
+</html>
