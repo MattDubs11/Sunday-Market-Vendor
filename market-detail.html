@@ -138,6 +138,19 @@
 ```
 
   </div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const market = params.get("market");
 
+  const title = document.querySelector("h1");
+
+  if (market === "union") {
+    title.innerText = "Union Square Vendors";
+  } else if (market === "chelsea") {
+    title.innerText = "Chelsea Market Vendors";
+  } else if (market === "essex") {
+    title.innerText = "Essex Market Vendors";
+  }
+</script>
 </body>
 </html>
