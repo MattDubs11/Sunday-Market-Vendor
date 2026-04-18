@@ -41,12 +41,10 @@
   <script>
     const map = L.map('map').setView([40.7831, -73.9712], 12);
 
-    // Satellite map
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles © Esri'
     }).addTo(map);
 
-    // Fix rendering
     setTimeout(() => {
       map.invalidateSize();
     }, 100);
@@ -57,7 +55,7 @@
         coords: [40.7359, -73.9911],
         details: `
           <div class="popup-title">
-            <a href="market-detail.html" style="color:#0a1a2f; text-decoration:none;">
+            <a href="market-detail.html?market=union" style="color:#0a1a2f; text-decoration:none;">
               Union Square Greenmarket
             </a>
           </div>
@@ -71,7 +69,7 @@
         coords: [40.7423, -74.0060],
         details: `
           <div class="popup-title">
-            <a href="market-detail.html" style="color:#0a1a2f; text-decoration:none;">
+            <a href="market-detail.html?market=chelsea" style="color:#0a1a2f; text-decoration:none;">
               Chelsea Market
             </a>
           </div>
@@ -85,7 +83,7 @@
         coords: [40.7180, -73.9883],
         details: `
           <div class="popup-title">
-            <a href="market-detail.html" style="color:#0a1a2f; text-decoration:none;">
+            <a href="market-detail.html?market=essex" style="color:#0a1a2f; text-decoration:none;">
               Essex Market
             </a>
           </div>
