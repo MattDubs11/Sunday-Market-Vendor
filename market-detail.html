@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Market Vendors | Sunday Market</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -15,11 +15,13 @@
       color: #0a1a2f;
     }
 
+    /* NAVBAR */
     .navbar {
       padding: 20px 60px;
       background: #0a1a2f;
       color: white;
       position: relative;
+      font-weight: 500;
     }
 
     .navbar::after {
@@ -31,43 +33,64 @@
       background: linear-gradient(to right, transparent, #c6a86b, transparent);
     }
 
-    .container {
-      padding: 60px 80px;
+    /* BACK */
+    .back-link {
+      display: inline-block;
+      margin: 20px 0 0 40px;
+      color: #475569;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* HEADER */
+    .header {
+      padding: 40px 80px 20px;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 42px;
+      font-size: 48px;
+      margin-bottom: 10px;
     }
 
     .gold-line {
       width: 80px;
       height: 2px;
       background: #c6a86b;
-      margin: 20px 0 40px;
+      margin-bottom: 30px;
     }
 
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #334155;
+    }
+
+    /* GRID */
     .vendors {
+      padding: 0 80px 80px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
 
+    /* CARD */
     .vendor-card {
       background: white;
       border-radius: 8px;
       overflow: hidden;
       border: 1px solid #d1d5db;
       transition: 0.3s;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
     }
 
     .vendor-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
     }
 
     .vendor-card img {
       width: 100%;
-      height: 160px;
+      height: 170px;
       object-fit: cover;
     }
 
@@ -78,16 +101,36 @@
     .vendor-info h3 {
       font-family: 'Playfair Display', serif;
       margin-bottom: 6px;
+      font-size: 20px;
+    }
+
+    .vendor-info p {
+      color: #475569;
+      font-size: 14px;
+      margin-bottom: 8px;
     }
 
     .rating {
       color: #c6a86b;
-      margin: 6px 0;
+      font-size: 14px;
+      margin-bottom: 6px;
     }
 
     .review {
-      font-size: 14px;
-      color: #475569;
+      font-size: 13px;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    @media (max-width: 900px) {
+      .vendors {
+        grid-template-columns: 1fr;
+        padding: 0 30px 60px;
+      }
+
+      .header {
+        padding: 30px;
+      }
     }
   </style>
 
@@ -96,48 +139,50 @@
 <body>
 
   <div class="navbar">Sunday Market</div>
+  <a href="market.html" class="back-link">‹ Back to Map</a>
 
-  <div class="container">
-    <h1>Essex Market Vendors</h1>
+  <div class="header">
+    <h1>Market Vendors</h1>
     <div class="gold-line"></div>
+    <div class="section-title">Featured Vendors</div>
+  </div>
+
+  <div class="vendors">
 
 ```
-<div class="vendors">
-
-  <div class="vendor-card">
-    <img src="https://via.placeholder.com/300x150">
-    <div class="vendor-info">
-      <h3>Fresh Bites</h3>
-      <p>Organic food & smoothies</p>
-      <div class="rating">★★★★★</div>
-      <p class="review">"Best smoothies in the city!"</p>
-    </div>
+<div class="vendor-card">
+  <img src="https://via.placeholder.com/300x150">
+  <div class="vendor-info">
+    <h3>Fresh Bites</h3>
+    <p>Organic food & smoothies</p>
+    <div class="rating">★★★★★</div>
+    <div class="review">"Best smoothies in the city!"</div>
   </div>
+</div>
 
-  <div class="vendor-card">
-    <img src="https://via.placeholder.com/300x150">
-    <div class="vendor-info">
-      <h3>Urban Crafts</h3>
-      <p>Handmade goods</p>
-      <div class="rating">★★★★☆</div>
-      <p class="review">"Beautiful handmade pieces."</p>
-    </div>
+<div class="vendor-card">
+  <img src="https://via.placeholder.com/300x150">
+  <div class="vendor-info">
+    <h3>Urban Crafts</h3>
+    <p>Handmade goods</p>
+    <div class="rating">★★★★☆</div>
+    <div class="review">"Beautiful handmade pieces."</div>
   </div>
+</div>
 
-  <div class="vendor-card">
-    <img src="https://via.placeholder.com/300x150">
-    <div class="vendor-info">
-      <h3>Street Wear Co.</h3>
-      <p>Clothing & apparel</p>
-      <div class="rating">★★★★★</div>
-      <p class="review">"Super stylish clothes!"</p>
-    </div>
+<div class="vendor-card">
+  <img src="https://via.placeholder.com/300x150">
+  <div class="vendor-info">
+    <h3>Street Wear Co.</h3>
+    <p>Clothing & apparel</p>
+    <div class="rating">★★★★★</div>
+    <div class="review">"Super stylish clothes!"</div>
   </div>
-
 </div>
 ```
 
   </div>
+
 <script>
   const params = new URLSearchParams(window.location.search);
   const market = params.get("market");
@@ -152,5 +197,9 @@
     title.innerText = "Essex Market Vendors";
   }
 </script>
+
+</body>
+</html>
+
 </body>
 </html>
