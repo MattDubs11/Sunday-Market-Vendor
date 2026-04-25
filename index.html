@@ -150,155 +150,72 @@ border-top-left-radius: 6px;
 border-top-right-radius: 6px;
 }
 
-.signin-box h2 { margin-bottom: 20px; font-weight: 500; }
-
-.signin-box input {
-width: 100%;
-padding: 12px;
-margin-bottom: 14px;
-border-radius: 4px;
-border: 1px solid #cbd5e1;
-background: #f9fafb;
-}
-
-.signin-box button {
-width: 100%;
-padding: 12px;
-border-radius: 4px;
-border: none;
-background: #0a1a2f;
-color: white;
-font-weight: 500;
-cursor: pointer;
-transition: 0.3s;
-}
-
-.signin-box button:hover { background: #13294b; }
-
 footer {
 text-align: center;
 padding: 30px;
 border-top: 1px solid #d1d5db;
 color: #6b7280;
 font-size: 14px;
-}
-
-@media (max-width: 900px) {
-.hero { flex-direction: column; text-align: center; }
-}
-
-.role-toggle {
-display: flex;
-margin-bottom: 20px;
-border: 1px solid #d1d5db;
-border-radius: 4px;
-overflow: hidden;
-}
-
-.role-toggle button {
-flex: 1;
-padding: 10px;
-border: none;
-background: #f1f5f9;
-cursor: pointer;
-font-size: 14px;
-}
-
-.role-toggle button.active {
-background: #0a1a2f;
-color: white;
-}
-
-.role-toggle button:not(.active):hover {
-background: #e2e8f0;
-}
-
-  </style>
+} </style>
 
 </head>
+
 <body>
 
-  <nav class="navbar">
-    <div class="logo">Sunday Market</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Search</a></li>
-    </ul>
-  </nav>
+<nav class="navbar">
+  <div class="logo">Sunday Market</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Search</a></li>
+  </ul>
+</nav>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Modern Marketplace for Local Vendors</h1>
-      <p>Discover curated vendors, explore the market through an interactive map, and experience a smarter way to connect with local businesses.</p>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Modern Marketplace for Local Vendors</h1>
+    <p>Discover curated vendors, explore the market through an interactive map, and experience a smarter way to connect with local businesses.</p>
+    <a href="market.html" class="cta-button">Explore Market</a>
+  </div>
+</section>
 
-<a href="market.html" class="cta-button">Explore Market</a>
+<!-- 🔥 NEW ABOUT SECTION -->
 
-</div>
+<div id="about" style="padding: 120px 80px; background: white;">
 
-<div class="signin-box">
-  <div class="role-toggle">
-    <button class="active">Browser</button>
-    <button>Vendor</button>
+  <div style="max-width: 900px; margin-bottom: 80px;">
+    <h2 style="font-size: 52px; margin-bottom: 20px;">More Than a Market</h2>
+    <p style="font-size: 20px; line-height: 1.7; color:#475569;">
+      Sunday Market was built to give local vendors the visibility they deserve.
+      Behind every stand is a real person, a story, and a business trying to grow — and we believe those deserve to be seen.
+    </p>
   </div>
 
-  <h2>Sign In (Browser)</h2>
-  <input type="email" placeholder="Email address">
-  <input type="password" placeholder="Password">
-  <button>Sign In</button>
-</div>
-
-  </section>
-
-  <!-- ✅ ONLY CHANGED SECTION -->
-
-  <div id="about" style="padding: 120px 80px; background: white;">
-
-```
-<h2 style="font-size: 48px; margin-bottom: 60px;">About Sunday Market</h2>
-
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px;">
-
-  <div>
-    <h3 style="margin-bottom: 10px;">Discover Markets</h3>
-    <p style="color:#475569;">Explore local markets through an interactive map.</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px;">
+    <div>
+      <h3 style="font-size: 28px;">What We Do</h3>
+      <p style="color:#475569;">We connect people to local markets through an interactive, visual experience.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" style="width:100%; border-radius:10px;">
   </div>
 
-  <div>
-    <h3 style="margin-bottom: 10px;">Support Vendors</h3>
-    <p style="color:#475569;">Shop from local businesses and creators.</p>
-  </div>
-
-  <div>
-    <h3 style="margin-bottom: 10px;">Real Reviews</h3>
-    <p style="color:#475569;">See customer feedback before visiting.</p>
-  </div>
-
-  <div>
-    <h3 style="margin-bottom: 10px;">Plan Visits</h3>
-    <p style="color:#475569;">Check times, locations, and details.</p>
-  </div>
-
-  <div>
-    <h3 style="margin-bottom: 10px;">Grow Your Brand</h3>
-    <p style="color:#475569;">Vendors gain visibility and reach.</p>
-  </div>
-
-  <div>
-    <h3 style="margin-bottom: 10px;">Community</h3>
-    <p style="color:#475569;">Built around local culture and connection.</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+    <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47" style="width:100%; border-radius:10px;">
+    <div>
+      <h3 style="font-size: 28px;">Why It Matters</h3>
+      <p style="color:#475569;">
+        Markets are more than places to shop — they are communities.
+        Our goal is to make them more visible, accessible, and impactful.
+      </p>
+    </div>
   </div>
 
 </div>
-```
 
-  </div>
-
-  <footer>
-    © 2026 Sunday Market. All rights reserved.
-  </footer>
+<footer>
+  © 2026 Sunday Market. All rights reserved.
+</footer>
 
 </body>
 </html>
-
