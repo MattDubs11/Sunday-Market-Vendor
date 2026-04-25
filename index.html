@@ -1,1 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunday Market</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: #e5e7eb;
+color: #0a1a2f;
+font-family: 'Inter', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 60px;
+background: #0a1a2f;
+color: white;
+border-bottom: 1px solid rgba(255,255,255,0.05);
+position: relative;
+}
+
+.navbar::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 2px;
+background: linear-gradient(to right, transparent, #c6a86b, transparent);
+}
+
+.logo { font-size: 22px; font-weight: 500; letter-spacing: 0.5px; }
+
+.nav-links { list-style: none; display: flex; gap: 35px; }
+
+.nav-links li a {
+text-decoration: none;
+color: #cbd5e1;
+font-size: 14px;
+letter-spacing: 0.5px;
+position: relative;
+}
+
+.nav-links li a::after {
+content: "";
+position: absolute;
+width: 0;
+height: 1px;
+bottom: -4px;
+left: 0;
+background: #c6a86b;
+transition: 0.3s;
+}
+
+.nav-links li a:hover::after { width: 100%; }
+
+/* HERO */
+.hero {
+min-height: 90vh;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 100px 80px;
+gap: 80px;
+background: linear-gradient(to bottom, #e5e7eb 60%, #dde1e7);
+position: relative;
+}
+
+.hero::before {
+content: "";
+position: absolute;
+width: 100%;
+height: 100%;
+background-image: radial-gradient(circle at 1px 1px, rgba(10,26,47,0.06) 1px, transparent 0);
+background-size: 32px 32px;
+opacity: 0.4;
+pointer-events: none;
+}
+
+.hero-text h1 {
+font-family: 'Playfair Display', serif;
+font-size: 64px;
+font-weight: 600;
+margin-bottom: 25px;
+line-height: 1.1;
+position: relative;
+}
+
+.hero-text h1::after {
+content: "";
+display: block;
+width: 60px;
+height: 2px;
+background: #c6a86b;
+margin-top: 12px;
+}
+
+.hero-text p {
+font-size: 18px;
+color: #475569;
+margin-bottom: 35px;
+max-width: 520px;
+}
+
+.cta-button {
+padding: 12px 26px;
+background: transparent;
+border: 1px solid #c6a86b;
+border-radius: 4px;
+color: #0a1a2f;
+font-weight: 500;
+cursor: pointer;
+transition: 0.3s;
+text-decoration: none;
+display: inline-block;
+}
+
+.cta-button:hover {
+background: #c6a86b;
+color: white;
+}
+
+.signin-box {
+background: #ffffff;
+border: 1px solid #d1d5db;
+padding: 35px;
+border-radius: 6px;
+width: 360px;
+box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+position: relative;
+}
+
+.signin-box::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 3px;
+background: #c6a86b;
+border-top-left-radius: 6px;
+border-top-right-radius: 6px;
+}
+
+.signin-box h2 { margin-bottom: 20px; font-weight: 500; }
+
+.signin-box input {
+width: 100%;
+padding: 12px;
+margin-bottom: 14px;
+border-radius: 4px;
+border: 1px solid #cbd5e1;
+background: #f9fafb;
+}
+
+.signin-box button {
+width: 100%;
+padding: 12px;
+border-radius: 4px;
+border: none;
+background: #0a1a2f;
+color: white;
+font-weight: 500;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.signin-box button:hover { background: #13294b; }
+
+footer {
+text-align: center;
+padding: 30px;
+border-top: 1px solid #d1d5db;
+color: #6b7280;
+font-size: 14px;
+}
+
+@media (max-width: 900px) {
+.hero { flex-direction: column; text-align: center; }
+}
+
+.role-toggle {
+display: flex;
+margin-bottom: 20px;
+border: 1px solid #d1d5db;
+border-radius: 4px;
+overflow: hidden;
+}
+
+.role-toggle button {
+flex: 1;
+padding: 10px;
+border: none;
+background: #f1f5f9;
+cursor: pointer;
+font-size: 14px;
+}
+
+.role-toggle button.active {
+background: #0a1a2f;
+color: white;
+}
+
+/* ✅ ONLY CHANGE */
+.role-toggle button:not(.active):hover {
+background: #c6a86b;
+color: white;
+}
+
+  </style>
+
+  <script>
+    function switchRole(role) {
+      const buttons = document.querySelectorAll('.role-toggle button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      if (role === 'browser') {
+        buttons[0].classList.add('active');
+        document.getElementById('form-title').innerText = 'Sign In (Browser)';
+      } else {
+        buttons[1].classList.add('active');
+        document.getElementById('form-title').innerText = 'Sign In (Vendor)';
+      }
+    }
+  
+    function handleLogin() {
+      const isVendor = document.querySelectorAll('.role-toggle button')[1].classList.contains('active');
+
+      if (isVendor) {
+        window.location.href = 'vendor-permit.html';
+      } else {
+        window.location.href = 'browser-home.html';
+      }
+    }
+  </script>
+
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Sunday Market</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Search</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Modern Marketplace for Local Vendors</h1>
+      <p>Discover curated vendors, explore the market through an interactive map, and experience a smarter way to connect with local businesses.</p>
+
+<a href="market.html" class="cta-button">Explore Market</a>
+
+</div>
+
+<div class="signin-box">
+  <div class="role-toggle">
+    <button class="active" onclick="switchRole('browser')">Browser</button>
+    <button onclick="switchRole('vendor')">Vendor</button>
+  </div>
+
+  <h2 id="form-title">Sign In (Browser)</h2>
+  <input type="email" placeholder="Email address">
+  <input type="password" placeholder="Password">
+  <button onclick="handleLogin()">Sign In</button>
+</div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <div id="about" style="padding: 120px 80px; background: white;">
+
+<div style="max-width: 900px; margin-bottom: 80px;">
+  <h2 style="font-size: 52px; margin-bottom: 20px;">More Than a Market</h2>
+  <p style="font-size: 20px; line-height: 1.8; color:#475569;">
+    Sunday Market exists to give local vendors the visibility they deserve.
+    Behind every stand is a real person — a creator, a business owner, someone building something meaningful.
+    We bring those people forward and connect them with the community around them.
+  </p>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px;">
+  <div>
+    <h3 style="font-size: 28px; margin-bottom: 15px;">What We Do</h3>
+    <p style="color:#475569; line-height: 1.7;">
+      We turn real-world markets into a digital experience. Users can explore locations,
+      discover vendors, and preview what’s available before even arriving.
+    </p>
+  </div>
+
+<img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df"
+    style="width:100%; border-radius:10px;">
+
+</div>
+
+<!-- ✅ ONLY ADDITION -->
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px;">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+    style="width:100%; border-radius:10px;">
+
+  <div>
+    <h3 style="font-size: 28px; margin-bottom: 15px;">How It Works</h3>
+    <p style="color:#475569; line-height: 1.7;">
+      Through an interactive map and structured vendor pages, users can explore markets visually
+      while vendors gain a professional digital presence.
+    </p>
+  </div>
+
+</div>
+
+<div style="max-width: 900px;">
+  <h3 style="font-size: 28px; margin-bottom: 15px;">Why It Matters</h3>
+  <p style="color:#475569; line-height: 1.7;">
+    Local markets are more than places to shop — they are communities.
+    Our goal is to make them more visible, accessible, and impactful.
+  </p>
+</div>
+
+  </div>
+
+  <footer>
+    © 2026 Sunday Market. All rights reserved.
+  </footer>
+
+</body>
+</html>
 
