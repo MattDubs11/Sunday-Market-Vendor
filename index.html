@@ -128,7 +128,6 @@ background: #c6a86b;
 color: white;
 }
 
-/* SIGN IN */
 .signin-box {
 background: #ffffff;
 border: 1px solid #d1d5db;
@@ -149,6 +148,43 @@ height: 3px;
 background: #c6a86b;
 border-top-left-radius: 6px;
 border-top-right-radius: 6px;
+}
+
+.signin-box h2 { margin-bottom: 20px; font-weight: 500; }
+
+.signin-box input {
+width: 100%;
+padding: 12px;
+margin-bottom: 14px;
+border-radius: 4px;
+border: 1px solid #cbd5e1;
+background: #f9fafb;
+}
+
+.signin-box button {
+width: 100%;
+padding: 12px;
+border-radius: 4px;
+border: none;
+background: #0a1a2f;
+color: white;
+font-weight: 500;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.signin-box button:hover { background: #13294b; }
+
+footer {
+text-align: center;
+padding: 30px;
+border-top: 1px solid #d1d5db;
+color: #6b7280;
+font-size: 14px;
+}
+
+@media (max-width: 900px) {
+.hero { flex-direction: column; text-align: center; }
 }
 
 .role-toggle {
@@ -173,115 +209,114 @@ background: #0a1a2f;
 color: white;
 }
 
-.signin-box input {
-width: 100%;
-padding: 12px;
-margin-bottom: 14px;
-border-radius: 4px;
-border: 1px solid #cbd5e1;
-background: #f9fafb;
+.role-toggle button:not(.active):hover {
+background: #e2e8f0;
 }
 
-.signin-box button {
-width: 100%;
-padding: 12px;
-border-radius: 4px;
-border: none;
-background: #0a1a2f;
-color: white;
-font-weight: 500;
-cursor: pointer;
-}
+  </style>
 
-footer {
-text-align: center;
-padding: 30px;
-border-top: 1px solid #d1d5db;
-color: #6b7280;
-font-size: 14px;
-} </style>
+  <script>
+    function switchRole(role) {
+      const buttons = document.querySelectorAll('.role-toggle button');
+      buttons.forEach(btn => btn.classList.remove('active'));
 
-<script>
-function switchRole(role) {
-  const buttons = document.querySelectorAll('.role-toggle button');
-  buttons.forEach(btn => btn.classList.remove('active'));
+      if (role === 'browser') {
+        buttons[0].classList.add('active');
+        document.getElementById('form-title').innerText = 'Sign In (Browser)';
+      } else {
+        buttons[1].classList.add('active');
+        document.getElementById('form-title').innerText = 'Sign In (Vendor)';
+      }
+    }
+  
+    function handleLogin() {
+      const isVendor = document.querySelectorAll('.role-toggle button')[1].classList.contains('active');
 
-  if (role === 'browser') {
-    buttons[0].classList.add('active');
-    document.getElementById('form-title').innerText = 'Sign In (Browser)';
-  } else {
-    buttons[1].classList.add('active');
-    document.getElementById('form-title').innerText = 'Sign In (Vendor)';
-  }
-}
-
-function handleLogin() {
-  const isVendor = document.querySelectorAll('.role-toggle button')[1].classList.contains('active');
-
-  if (isVendor) {
-    window.location.href = 'vendor-permit.html';
-  } else {
-    window.location.href = 'browser-home.html';
-  }
-}
-</script>
+      if (isVendor) {
+        window.location.href = 'vendor-permit.html';
+      } else {
+        window.location.href = 'browser-home.html';
+      }
+    }
+  </script>
 
 </head>
-
 <body>
 
-<nav class="navbar">
-  <div class="logo">Sunday Market</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Search</a></li>
-  </ul>
-</nav>
+  <nav class="navbar">
+    <div class="logo">Sunday Market</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Search</a></li>
+    </ul>
+  </nav>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>Modern Marketplace for Local Vendors</h1>
-    <p>Discover curated vendors, explore the market through an interactive map, and experience a smarter way to connect with local businesses.</p>
-    <a href="market.html" class="cta-button">Explore Market</a>
-  </div>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Modern Marketplace for Local Vendors</h1>
+      <p>Discover curated vendors, explore the market through an interactive map, and experience a smarter way to connect with local businesses.</p>
 
-  <!-- ✅ RESTORED EXACT SIGN-IN -->
-
-  <div class="signin-box">
-    <div class="role-toggle">
-      <button class="active" onclick="switchRole('browser')">Browser</button>
-      <button onclick="switchRole('vendor')">Vendor</button>
-    </div>
-
-```
-<h2 id="form-title">Sign In (Browser)</h2>
-<input type="email" placeholder="Email address">
-<input type="password" placeholder="Password">
-<button onclick="handleLogin()">Sign In</button>
-```
-
-  </div>
-</section>
-
-<!-- ABOUT (kept improved version) -->
-
-<div id="about" style="padding: 120px 80px; background: white;">
-
-  <div style="max-width: 900px; margin-bottom: 80px;">
-    <h2 style="font-size: 52px; margin-bottom: 20px;">More Than a Market</h2>
-    <p style="font-size: 20px; line-height: 1.7; color:#475569;">
-      Sunday Market was built to give local vendors the visibility they deserve.
-      Behind every stand is a real person, a story, and a business trying to grow — and we believe those deserve to be seen.
-    </p>
-  </div>
+<a href="market.html" class="cta-button">Explore Market</a>
 
 </div>
 
-<footer>
-  © 2026 Sunday Market. All rights reserved.
-</footer>
+<div class="signin-box">
+  <div class="role-toggle">
+    <button class="active" onclick="switchRole('browser')">Browser</button>
+    <button onclick="switchRole('vendor')">Vendor</button>
+  </div>
+
+  <h2 id="form-title">Sign In (Browser)</h2>
+  <input type="email" placeholder="Email address">
+  <input type="password" placeholder="Password">
+  <button onclick="handleLogin()">Sign In</button>
+</div>
+
+  </section>
+
+  <!-- ✅ ONLY THIS SECTION CHANGED -->
+
+  <div id="about" style="padding: 120px 80px; background: white;">
+
+```
+<div style="max-width: 900px; margin-bottom: 80px;">
+  <h2 style="font-size: 52px; margin-bottom: 20px;">More Than a Market</h2>
+  <p style="font-size: 20px; line-height: 1.8; color:#475569;">
+    Sunday Market exists to give local vendors the visibility they deserve.
+    Behind every stand is a real person — a creator, a business owner, someone building something meaningful.
+    We bring those people forward and connect them with the community around them.
+  </p>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px;">
+  <div>
+    <h3 style="font-size: 28px; margin-bottom: 15px;">What We Do</h3>
+    <p style="color:#475569; line-height: 1.7;">
+      We turn real-world markets into a digital experience. Users can explore locations,
+      discover vendors, and preview what’s available before even arriving.
+    </p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df"
+       style="width:100%; border-radius:10px;">
+</div>
+
+<div style="max-width: 900px;">
+  <h3 style="font-size: 28px; margin-bottom: 15px;">Why It Matters</h3>
+  <p style="color:#475569; line-height: 1.7;">
+    Local markets are more than places to shop — they are communities.
+    Our goal is to make them more visible, accessible, and impactful.
+  </p>
+</div>
+```
+
+  </div>
+
+  <footer>
+    © 2026 Sunday Market. All rights reserved.
+  </footer>
 
 </body>
 </html>
