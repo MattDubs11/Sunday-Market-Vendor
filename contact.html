@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Sunday Market</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #e5e7eb;
+      color: #0a1a2f;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #0a1a2f;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #cbd5e1;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 120px 80px;
+      background: white;
+    }
+
+    .contact h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      color: #475569;
+      margin-bottom: 50px;
+      max-width: 600px;
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #d1d5db;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #0a1a2f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #d1d5db;
+      color: #6b7280;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div>Sunday Market</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="contact">
+    <h1>Get in Touch</h1>
+    <p>
+      Whether you're a vendor looking to join Sunday Market or a visitor with questions, we're here to help.
+      Send us a message and we’ll get back to you as soon as possible.
+    </p>
+
+    <div class="grid">
+
+      <!-- FORM -->
+      <div>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Email Address">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button>Send Message</button>
+      </div>
+
+      <!-- INFO -->
+      <div>
+        <h3>Contact Info</h3>
+        <p>📧 support@sundaymarket.com</p>
+        <p>📍 Local markets in your city</p>
+        <p>🕒 We usually respond within 24 hours</p>
+
+        <br>
+
+        <h3>For Vendors</h3>
+        <p>
+          Interested in selling at Sunday Market? Send us a message and we’ll guide you through the process.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Sunday Market. All rights reserved.
+  </footer>
+
+</body>
+</html>
