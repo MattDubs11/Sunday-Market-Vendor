@@ -263,7 +263,70 @@
     title.innerText = "Essex Market Vendors";
   }
 </script>
+<script>
 
+// SELECT ALL EXISTING VENDOR CARDS
+const cards = document.querySelectorAll(".vendor-card");
+
+// NEW VENDOR DATA (ONLY replaces text)
+const vendorData = {
+
+  essex: [
+    {
+      name: "Market Meals",
+      desc: "Prepared food & local dishes",
+      review: "“Great quick meals!”"
+    },
+    {
+      name: "Bakery Corner",
+      desc: "Fresh bread & pastries",
+      review: "“Best pastries around.”"
+    },
+    {
+      name: "Grocery Hub",
+      desc: "Local produce & essentials",
+      review: "“Super fresh ingredients.”"
+    }
+  ],
+
+  chelsea: [
+    {
+      name: "Artisan Eats",
+      desc: "Specialty food vendors",
+      review: "“Unique and delicious.”"
+    },
+    {
+      name: "Dessert Bar",
+      desc: "Cakes & sweets",
+      review: "“Amazing desserts!”"
+    },
+    {
+      name: "Chelsea Goods",
+      desc: "Local retail products",
+      review: "“Loved the selection.”"
+    }
+  ]
+
+};
+
+// ONLY CHANGE VENDORS IF NOT UNION
+if (market !== "union" && vendorData[market]) {
+
+  cards.forEach((card, index) => {
+
+    const h3 = card.querySelector("h3");
+    const p = card.querySelector("p");
+    const review = card.querySelector(".review");
+
+    h3.innerText = vendorData[market][index].name;
+    p.innerText = vendorData[market][index].desc;
+    review.innerText = vendorData[market][index].review;
+
+  });
+
+}
+
+</script>
 </body>
 </html>
 
