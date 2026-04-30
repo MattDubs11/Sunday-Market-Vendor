@@ -1,11 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sunday Market Browser</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Vendors</title>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial;
+  background: #f5f5f5;
+  padding: 40px;
+}
+
+/* HEADER */
+.header {
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #666;
+}
+
+/* SEARCH */
+.search {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* CATEGORY TAG */
+.tag {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 5px;
+}
+</style>
 </head>
-<body style="font-family: Arial; text-align:center; padding:50px; background:#e5e7eb;">
-  <h1>Welcome to Sunday Market</h1>
-  <p>Browser experience coming soon.</p>
+
+<body>
+
+<div class="header">
+  <h1>Browse Vendors</h1>
+  <p>Explore vendors across different markets</p>
+</div>
+
+<input class="search" placeholder="Search vendors (e.g. streetwear, food...)" onkeyup="searchVendors()">
+
+<div class="grid" id="vendorGrid">
+
+  <div class="card">
+    <div class="tag">Clothing</div>
+    Streetwear Co.
+  </div>
+
+  <div class="card">
+    <div class="tag">Food</div>
+    Taco Stand
+  </div>
+
+  <div class="card">
+    <div class="tag">Clothing</div>
+    Vintage Clothing
+  </div>
+
+  <div class="card">
+    <div class="tag">Drinks</div>
+    Smoothie Bar
+  </div>
+
+  <div class="card">
+    <div class="tag">Shoes</div>
+    Sneaker Shop
+  </div>
+
+  <div class="card">
+    <div class="tag">Accessories</div>
+    Handmade Jewelry
+  </div>
+
+</div>
+
+<script>
+function searchVendors() {
+  const input = document.querySelector(".search").value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(input) ? "block" : "none";
+  });
+}
+</script>
+
 </body>
 </html>
