@@ -434,13 +434,27 @@ lastTopic = "streetwear";
   }
 
   else if (text.includes("dessert") || text.includes("sweet")) {
+     lastTopic = "dessert";
     reply = "Chelsea Market has amazing desserts and sweets.";
   }
 
   else if (text.includes("where") && text.includes("go")) {
     reply = "For food → Essex, for streetwear → Union Square, for desserts → Chelsea.";
   }
-
+else if (text.includes("else")) {
+  if (lastTopic === "streetwear") {
+    reply = "You can also find accessories and local fashion brands at Union Square Market.";
+  } 
+  else if (lastTopic === "dessert") {
+    reply = "You can also find pastries, baked goods, and specialty sweets.";
+  } 
+  else if (lastTopic === "food") {
+    reply = "There are also drinks, snacks, and fresh produce vendors.";
+  } 
+  else {
+    reply = "Try asking about food, streetwear, or desserts.";
+  }
+}
   // Show bot reply
   messages.innerHTML += "<div><strong>Bot:</strong> " + reply + "</div>";
 
