@@ -221,6 +221,7 @@ color: white;
   </style>
 
   <script>
+   let lastTopic = "";
     function switchRole(role) {
       const buttons = document.querySelectorAll('.role-toggle button');
       buttons.forEach(btn => btn.classList.remove('active'));
