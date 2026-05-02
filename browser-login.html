@@ -7,8 +7,58 @@
 
 <style>
 body {
+  font-family: Arial;
+  background: #f5f5f5;
+  margin: 0;
+}
+
+/* LOGIN BOX */
+.box {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #0a1a2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* CENTER CONTENT */
+.container {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  text-align:center;
+}
+</style>
+
+</head>
+
 <body>
 
+<!-- BACK BUTTON -->
 <a href="index.html" style="
 position:absolute;
 top:20px;
@@ -22,14 +72,8 @@ font-weight:500;
 ← Back
 </a>
 
-<div style="
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-height:100vh;
-text-align:center;
-">
+<!-- MAIN CONTENT -->
+<div class="container">
 
   <h1 style="margin-bottom:10px;">Welcome Back</h1>
   <p style="color:#666; margin-bottom:30px;">
@@ -37,7 +81,7 @@ text-align:center;
   </p>
 
   <div class="box">
-    <h2 style="margin-bottom:15px;">Browser Sign In</h2>
+    <h2>Browser Sign In</h2>
 
     <input type="email" placeholder="Email">
     <input type="password" placeholder="Password">
@@ -54,5 +98,4 @@ function login() {
 </script>
 
 </body>
-</body>
-
+</html>
