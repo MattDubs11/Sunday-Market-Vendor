@@ -433,10 +433,15 @@ alert(text);
     reply = "Essex Market is the best spot for food and prepared meals.";
   }
 
-  else if (text.includes("dessert") || text.includes("sweet")) {
-     lastTopic = "dessert";
-    reply = "Chelsea Market has amazing desserts and sweets.";
-  }
+ else if (
+  text.includes("dessert") ||
+  text.includes("sweet") ||
+  text.includes("baked") ||
+  text.includes("chelsea")
+) {
+  lastTopic = "dessert";
+  reply = "Chelsea Market has amazing desserts and sweets.";
+}
 
   else if (text.includes("where") && text.includes("go")) {
     reply = "For food → Essex, for streetwear → Union Square, for desserts → Chelsea.";
