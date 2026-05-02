@@ -404,48 +404,43 @@ Chat Assistant
 </div>
 
 <script>
-<script>
-function toggleChat() {
-  const chat = document.getElementById("chatbot");
-  chat.style.display = chat.style.display === "none" ? "block" : "none";
-}
-
 function sendChat() {
   const input = document.getElementById("chat-input");
   const messages = document.getElementById("chat-messages");
 
   const userText = input.value.trim();
-  if (!userText) return;
+  if (userText === "") return;
 
+  // Show user message
   messages.innerHTML += "<div><strong>You:</strong> " + userText + "</div>";
 
-  let reply = "I'm not sure yet — try asking about food, streetwear, or markets.";
+  let reply = "Try asking about food, streetwear, or desserts.";
 
   const text = userText.toLowerCase();
 
-  // STREETWEAR
   if (text.includes("streetwear") || text.includes("clothes")) {
-    reply = "You should check out Union Square Market — Street Wear Co. has great options.";
+    reply = "Union Square Market has great streetwear vendors like Street Wear Co.";
   }
 
-  // FOOD
   else if (text.includes("food") || text.includes("eat")) {
-    reply = "Essex Market is best for food — lots of prepared meals and local dishes.";
+    reply = "Essex Market is the best spot for food and prepared meals.";
   }
 
-  // DESSERT
   else if (text.includes("dessert") || text.includes("sweet")) {
-    reply = "Chelsea Market has amazing desserts like cakes and sweets.";
+    reply = "Chelsea Market has amazing desserts and sweets.";
   }
 
-  // GENERAL
   else if (text.includes("where") && text.includes("go")) {
-    reply = "It depends what you want! Food → Essex, Streetwear → Union Square, Desserts → Chelsea.";
+    reply = "For food → Essex, for streetwear → Union Square, for desserts → Chelsea.";
   }
 
+  // Show bot reply
   messages.innerHTML += "<div><strong>Bot:</strong> " + reply + "</div>";
 
+  // Scroll down
   messages.scrollTop = messages.scrollHeight;
+
+  // Clear input
   input.value = "";
 }
 </script>
