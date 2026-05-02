@@ -417,10 +417,40 @@ function sendChat() {
 
   messages.innerHTML += "<div><strong>You:</strong> " + userText + "</div>";
 
-  let reply = "I'm still learning, but I can help with vendors and markets!";
+function sendMessage() {
+  const input = document.getElementById("userInput").value.toLowerCase();
+  const chatBox = document.getElementById("chatBox");
 
-  if (userText.toLowerCase().includes("vendor")) {
-    reply = "You can explore vendors through the market page.";
+  // Show user message
+  chatBox.innerHTML += `<div><strong>You:</strong> ${input}</div>`;
+
+  let reply = "I'm not sure yet, try asking about food, streetwear, or markets.";
+
+  // STREETWEAR
+  if (input.includes("streetwear") || input.includes("clothes")) {
+    reply = "You should check out Union Square Market — Street Wear Co. has great options.";
+  }
+
+  // FOOD
+  else if (input.includes("food") || input.includes("eat")) {
+    reply = "Essex Market is best for food — lots of prepared meals and local dishes.";
+  }
+
+  // DESSERT
+  else if (input.includes("dessert") || input.includes("sweet")) {
+    reply = "Chelsea Market has amazing desserts like cakes and sweets.";
+  }
+
+  // GENERAL WHERE SHOULD I GO
+  else if (input.includes("where") && input.includes("go")) {
+    reply = "It depends what you want! Food → Essex, Streetwear → Union Square, Desserts → Chelsea.";
+  }
+
+  // Show bot reply
+  chatBox.innerHTML += `<div><strong>Bot:</strong> ${reply}</div>`;
+
+  document.getElementById("userInput").value = "";
+}
   }
   if (userText.toLowerCase().includes("market")) {
     reply = "Sunday Market connects you with local vendors in your area.";
