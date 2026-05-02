@@ -419,15 +419,15 @@ function sendChat() {
 
   const text = userText.toLowerCase();
 alert(text);
-  if (
+ if (
   text.includes("streetwear") ||
   text.includes("street wear") ||
   text.includes("clothes") ||
   text.includes("clothing")
-lastTopic = "streetwear";
-  ) {
-    reply = "Union Square Market has great streetwear vendors like Street Wear Co.";
-  }
+) {
+  lastTopic = "streetwear";
+  reply = "Union Square Market has great streetwear vendors like Street Wear Co.";
+}
 
   else if (text.includes("food") || text.includes("eat")) {
     reply = "Essex Market is the best spot for food and prepared meals.";
